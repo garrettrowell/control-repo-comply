@@ -21,9 +21,10 @@ class profile::compliance (
           include "sce_${kern}"
         } else {
           $msg = @("MSGEND"/L)
+
             Compliance enforcement is enabled, but the detected release
             '${detected_release}' is not in the list of configured releases:
-            ${configured_releases.join(', ')}.
+            ${configured_releases}.
             Blindly enforcing the default compliance profile will almost certainly break the system.
             Please configure the appropriate compliance profile for this release.
             | MSGEND
