@@ -30,21 +30,21 @@ class profile::compliance (
 
           echo { 'compliance_unconfigured':
             message  => $msg,
-            loglevel => 'warn',
+            loglevel => 'warning',
           }
         }
       }
       default: {
         echo { 'compliance_unsupported':
           message  => "Compliance enforcement is not supported on ${kern}.",
-          loglevel => 'warn',
+          loglevel => 'warning',
         }
       }
     }
   } else {
     echo { 'compliance_disabled':
       message  => 'Compliance enforcement is disabled.',
-      loglevel => 'warn',
+      loglevel => 'warning',
     }
   }
 }
