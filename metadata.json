@@ -1,0 +1,36 @@
+{
+  "name": "garrettrowell-control_repo_comply",
+  "version": "0.0.1",
+  "author": "ipcrm",
+  "summary": "A control repo",
+  "license": "Apache-2.0",
+  "source": "",
+  "project_page": "",
+  "issues_url": "",
+  "dependencies": [
+
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "24.04"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 8.0.0 < 9.0.0"
+    }
+  ],
+  "tags": [
+    "utilities",
+    "print",
+    "echo",
+    "log"
+  ],
+  "pdk-version": "3.5.1",
+  "template-url": "pdk-default#3.5.1",
+  "template-ref": "tags/3.5.1-0-g9d5b193"
+}
