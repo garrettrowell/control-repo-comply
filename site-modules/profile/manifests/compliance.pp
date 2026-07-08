@@ -14,6 +14,11 @@ class profile::compliance (
   $kern = $facts['kernel'].downcase
   $detected_release = "${facts['os']['name']} ${facts['os']['release']['major']}"
 
+  # Make sure any error handling messages are logged at the warning level so they are more visible.
+  Echo {
+    loglevel => 'warning',
+  }
+
   if $enforce {
     case $kern {
       'linux', 'windows': {
@@ -29,22 +34,19 @@ class profile::compliance (
             | MSGEND
 
           echo { 'compliance_unconfigured':
-            message  => $msg,
-            loglevel => 'warning',
+            message => $msg,
           }
         }
       }
       default: {
         echo { 'compliance_unsupported':
-          message  => "Compliance enforcement is not supported on ${kern}.",
-          loglevel => 'warning',
+          message => "Compliance enforcement is not supported on ${kern}.",
         }
       }
     }
   } else {
     echo { 'compliance_disabled':
-      message  => 'Compliance enforcement is disabled.',
-      loglevel => 'warning',
+      message => 'Compliance enforcement is disabled.',
     }
   }
 }

@@ -1,3 +1,18 @@
 ---
+# Manually define which releases we have configured to help safeguard
+# against the entirety of server level 1 benchmarks being applied, which is the
+# default behavior of the sce_ modules
 profile::compliance::configured_releases:
-  - "RedHat 9"
+  - "Ubuntu 24.04"
+
+# Configure knockout prefix so that if a given node needs to exclude a
+# configured benchmark, it can do so.
+lookup_options:
+  sce_linux::config:
+    merge:
+      strategy: deep
+      knockout_prefix: '!'
+  sce_windows::config:
+    merge:
+      strategy: deep
+      knockout_prefix: '!'
