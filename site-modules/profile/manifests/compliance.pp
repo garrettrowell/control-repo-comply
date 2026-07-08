@@ -23,26 +23,28 @@ class profile::compliance (
           $msg = @("MSGEND"/L)
 
             Compliance enforcement is enabled, but the detected release
-            '${detected_release}' is not in the list of configured releases:
-            ${configured_releases}.
+            '${detected_release}' is not in the list of configured releases: ${configured_releases}.
             Blindly enforcing the default compliance profile will almost certainly break the system.
             Please configure the appropriate compliance profile for this release.
             | MSGEND
 
           echo { 'compliance_unconfigured':
-            message => $msg,
+            message  => $msg,
+            loglevel => 'warn',
           }
         }
       }
       default: {
         echo { 'compliance_unsupported':
-          message => "Compliance enforcement is not supported on ${kern}.",
+          message  => "Compliance enforcement is not supported on ${kern}.",
+          loglevel => 'warn',
         }
       }
     }
   } else {
     echo { 'compliance_disabled':
-      message => 'Compliance enforcement is disabled.',
+      message  => 'Compliance enforcement is disabled.',
+      loglevel => 'warn',
     }
   }
 }
