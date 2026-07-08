@@ -15,3 +15,13 @@ forge 'https://forge.puppet.com'
 #mod 'apache',
 #  git:    'https://github.com/puppetlabs/puppetlabs-apache',
 #  branch: 'docs_experiment'
+
+# For SCM
+mod 'puppetlabs-comply', '3.8.1'
+mod 'puppet-archive', '8.1.0'
+mod 'puppetlabs-stdlib', '10.0.1'
+mod 'puppetlabs-chocolatey', '9.0.0'
+mod 'puppetlabs-powershell', '6.1.0'
+mod 'puppetlabs-pwshlib', '2.0.1'
+mod 'puppetlabs-registry', '5.0.3'
+mod 'puppetlabs-ruby_task_helper', '1.0.0'
