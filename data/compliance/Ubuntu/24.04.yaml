@@ -3,5 +3,5 @@ sce_linux::benchmark: 'cis'
 sce_linux::config:
   profile: 'server'
   level: '1'
-  only:
-    - 'ensure_usb_storage_kernel_module_is_not_available' # 1.1.1.9 in benchmark 1.0.0; 1.1.1.10 in benchmark 2.0.0
+  only: []
+#    - 'ensure_usb_storage_kernel_module_is_not_available' # 1.1.1.9 in benchmark 1.0.0; 1.1.1.10 in benchmark 2.0.0
