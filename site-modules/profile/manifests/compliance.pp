@@ -20,7 +20,7 @@ class profile::compliance (
         if $detected_release in $configured_releases {
           include "sce_${kern}"
         } else {
-          $msg = @(MSGEND/L)
+          $msg = @("MSGEND"/L)
             Compliance enforcement is enabled, but the detected release
             '${detected_release}' is not in the list of configured releases:
             ${configured_releases.join(', ')}.
